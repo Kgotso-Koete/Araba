@@ -1,16 +1,17 @@
 <head>
-  <title>Microscope</title>
-</head>
-<body>
-  <h1>Test</h1>
-  <div class="container">
-    <header class="navbar navbar-default" role="navigation"> 
-      <div class="navbar-header">
-        <a class="navbar-brand" href="/">Microscope</a>
+    <title>Microscope</title>
+  </head>
+  <body>
+    <div class="container">
+      <header class="navbar navbar-default" role="navigation"> 
+        <div class="navbar-header">
+          <a class="navbar-brand" href="/">Microscope</a>
+        </div>
+      </header>
+
+      <!-- Display all posts -->
+      <div id="main">
+        {{> postsList}}
       </div>
-    </header>
-    <div id="main">
-      {{> postsList}}
     </div>
-  </div>
-</body>
+  </body> 
