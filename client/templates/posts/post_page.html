@@ -1,11 +1,19 @@
 <template name="postPage">
   <div class="post-page page">
     {{> postItem}}
-
+    
+    {{#if currentUser}}
+      {{> commentSubmit}}
+    {{else}}
+      <p>Please log in to leave a comment.</p>
+    {{/if}}
+     
     <ul class="comments">
       {{#each comments}}
         {{> commentItem}}
       {{/each}}
     </ul>
+
+    
   </div>
-</template>  
+</template>
