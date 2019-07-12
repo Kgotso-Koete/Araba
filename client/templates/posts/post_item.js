@@ -7,4 +7,4 @@ Template.postItem.helpers({
     a.href = this.url;
     return a.hostname;
   }
-}); 
+});  
