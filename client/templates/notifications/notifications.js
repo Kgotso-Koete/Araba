@@ -6,7 +6,7 @@ Template.notifications.helpers({
         return Notifications.find({userId: Meteor.userId(), read: false}).count();
     }
   });
-  
+   
   Template.notificationItem.helpers({
     notificationPostPath: function() {
       return Router.routes.postPage.path({_id: this.postId});
