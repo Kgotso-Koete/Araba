@@ -64,5 +64,5 @@ if (Posts.find().count() === 0) {
       submitted: new Date(now - i * 3600 * 1000),
       commentsCount: 0
     });
-  }
+  } 
 }
