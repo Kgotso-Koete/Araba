@@ -35,4 +35,4 @@ Template.commentSubmit.onCreated(function() {
         }
       });
     }
-  }); 
+  });  
