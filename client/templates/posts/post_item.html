@@ -6,10 +6,11 @@
       <p>
         {{pluralize votes "Vote"}},
         submitted by {{author}},
+        {{#if clicks}}{{pluralize clicks "click"}},{{/if}}
         <a href="{{pathFor 'postPage'}}">{{pluralize commentsCount "comment"}}</a>
         {{#if ownPost}}<a href="{{pathFor 'postEdit'}}">Edit</a>{{/if}}
       </p>
     </div>
     <a href="{{pathFor 'postPage'}}" class="discuss btn btn-default">Discuss</a>
   </div>
-</template>
+</template> 
