@@ -48,9 +48,17 @@ if (Posts.find().count() === 0) {
     commentId: IDC_comment_1,
     userId: Kool_Herc._id,
     author: Kool_Herc.profile.name,
-    submitted: new Date(now - 5 * 3600 * 1000),
+    submitted: new Date(now - 10 * 5000 * 1000),
     body: 'Oh interesting, please tell me more about this person backed by the IDC?'
-  });
+  }); 
+
+  Replies.insert({
+    commentId: IDC_comment_1,
+    userId: Master_Flash._id,
+    author: Master_Flash.profile.name,
+    submitted: new Date(now - 12 * 10000 * 1000),
+    body: 'She built software to that matched worker type x to hiring firm tybe b, so the employmenent creation proposition was clear'
+  }); 
   
   for (var i = 0; i < 10; i++) {
     Posts.insert({

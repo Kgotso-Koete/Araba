@@ -10,7 +10,7 @@ Template.commentItem.helpers({
 Template.commentItem.events({
   'click .reply_button':function(){
     Meteor.subscribe('replies', this._id); 
-  } 
+  }  
 });   
 
 
