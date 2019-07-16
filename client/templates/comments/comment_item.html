@@ -4,6 +4,18 @@
         <span class="author">{{author}}</span>
         <span class="date">on {{submittedText}}</span>
       </h4>
-      <p>{{body}}</p>
+      <p>{{body}}
+          <div class="text-left">
+              <button type="button" class="btn reply_button">Show replies</button> 
+          </div>
+      </p>
     </li>
+
+    
+    <ul class="comments">
+        {{#each replies}}
+          {{> replyItem}}
+        {{/each}}
+    </ul>
+   
 </template>   

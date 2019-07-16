@@ -20,7 +20,7 @@ if (Posts.find().count() === 0) {
     votes: 0
   });   
 
-  Comments.insert({
+  var IDC_comment_1 = Comments.insert({
     postId: IDC_Id,
     userId: Kool_Herc._id,
     author: Kool_Herc.profile.name,
@@ -28,7 +28,7 @@ if (Posts.find().count() === 0) {
     body: 'Unfortunately the IDC only backs companies that can provide jobs in the medium term. You are better of getting VC'
   });
 
-  Comments.insert({
+  var IDC_comment_2 = Comments.insert({
     postId: IDC_Id,
     userId: Master_Flash,
     author: Master_Flash.profile.name,
@@ -36,6 +36,22 @@ if (Posts.find().count() === 0) {
     body: 'Have you tried joining any of the local accelerators? Some offer seed funding'
   });
 
+  Replies.insert({
+    commentId: IDC_comment_1,
+    userId: Master_Flash._id,
+    author: Master_Flash.profile.name,
+    submitted: new Date(now - 5 * 3600 * 1000),
+    body: 'That is not actually completely true. I know a friend who was backed by the IDC'
+  });
+
+  Replies.insert({
+    commentId: IDC_comment_1,
+    userId: Kool_Herc._id,
+    author: Kool_Herc.profile.name,
+    submitted: new Date(now - 5 * 3600 * 1000),
+    body: 'Oh interesting, please tell me more about this person backed by the IDC?'
+  });
+  
   for (var i = 0; i < 10; i++) {
     Posts.insert({
       title: 'Test question #' + i,
