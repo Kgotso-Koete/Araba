@@ -3,12 +3,12 @@ Template.postSubmit.events({
     e.preventDefault();
 
     var post = {
-      url: $(e.target).find('[name=url]').val(),
+      question: $(e.target).find('[name=question]').val(),
       title: $(e.target).find('[name=title]').val()
-    };
+    }; 
 
     var errors = validatePost(post);
-    if (errors.title || errors.url)
+    if (errors.title || errors.question)
       return Session.set('postSubmitErrors', errors);
 
     Meteor.call('postInsert', post, function(error, result) {
@@ -18,7 +18,7 @@ Template.postSubmit.events({
 
       // show this result but route anyway
       if (result.postExists)
-        throwError('This link has already been posted');
+        throwError('This question has already been posted');
 
       Router.go('postPage', {_id: result._id});  
     });
@@ -36,5 +36,5 @@ Template.postSubmit.helpers({
   errorClass: function (field) {
     return !!Session.get('postSubmitErrors')[field] ? 'has-error' : '';
   }
-});
+}); 
  
