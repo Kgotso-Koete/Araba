@@ -3,70 +3,45 @@ if (Posts.find().count() === 0) {
   var now = new Date().getTime();
 
   // create two users
-  var tomId = Meteor.users.insert({
-    profile: { name: 'Tom Coleman' }
-  });
-  var tom = Meteor.users.findOne(tomId);
-  var sachaId = Meteor.users.insert({
-    profile: { name: 'Sacha Greif' }
-  });
-  var sacha = Meteor.users.findOne(sachaId);
+  var kool_herc_id = Meteor.users.insert({ profile: { name: 'DJ Kool Herc' }});
+  var Kool_Herc = Meteor.users.findOne(kool_herc_id);
+
+  var master_flash_id = Meteor.users.insert({ profile: { name: 'Grand Master Flash' }});
+  var Master_Flash = Meteor.users.findOne(master_flash_id);
  
-  var telescopeId = Posts.insert({
-    title: 'Introducing Telescope',
-    userId: sacha._id,
-    author: sacha.profile.name,
-    question: 'http://sachagreif.com/introducing-telescope/',
+  var IDC_Id = Posts.insert({
+    title: 'IDC SME funding',
+    userId: Master_Flash._id,
+    author: Master_Flash.profile.name,
+    question: 'Has anyone sucessfully raised finance from the IDC for a software company? if so what steps did you follow?',
     submitted: new Date(now - 7 * 3600 * 1000),
     commentsCount: 2,
     upvoters: [],
     votes: 0
-  });
+  });  
 
   Comments.insert({
-    postId: telescopeId,
-    userId: tom._id,
-    author: tom.profile.name,
+    postId: IDC_Id,
+    userId: Kool_Herc._id,
+    author: Kool_Herc.profile.name,
     submitted: new Date(now - 5 * 3600 * 1000),
-    body: 'Interesting project Sacha, can I get involved?'
+    body: 'Unfortunately the IDC only backs companies that can provide jobs in the medium term. You are better of getting VC'
   });
 
   Comments.insert({
-    postId: telescopeId,
-    userId: sacha._id,
-    author: sacha.profile.name,
+    postId: IDC_Id,
+    userId: Master_Flash,
+    author: Master_Flash.profile.name,
     submitted: new Date(now - 3 * 3600 * 1000),
-    body: 'You sure can Tom!'
-  });
-
-  Posts.insert({
-    title: 'Meteor',
-    userId: tom._id,
-    author: tom.profile.name,
-    question: 'http://meteor.com',
-    submitted: new Date(now - 10 * 3600 * 1000),
-    commentsCount: 0,
-    upvoters: [],
-    votes: 0
-  });
-
-  Posts.insert({
-    title: 'The Meteor Book',
-    userId: tom._id,
-    author: tom.profile.name,
-    question: 'http://themeteorbook.com',
-    submitted: new Date(now - 12 * 3600 * 1000),
-    commentsCount: 0,
-    upvoters: [],
-    votes: 0
+    body: 'Have you tried joining any of the local accelerators? Some offer seed funding'
   });
 
   for (var i = 0; i < 10; i++) {
     Posts.insert({
-      title: 'Test post #' + i,
-      author: sacha.profile.name,
-      userId: sacha._id,
-      question: 'http://google.com/?q=test-' + i,
+      title: 'Test question #' + i,
+      author: Master_Flash.profile.name,
+      userId: Master_Flash._id,
+      question: 'How do I build a software company that integrates internet technology with African culture?' + i,
       submitted: new Date(now - i * 3600 * 1000 + 1),
       commentsCount: 0,
       upvoters: [],
