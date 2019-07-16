@@ -18,7 +18,7 @@ if (Posts.find().count() === 0) {
     commentsCount: 2,
     upvoters: [],
     votes: 0
-  });  
+  });   
 
   Comments.insert({
     postId: IDC_Id,

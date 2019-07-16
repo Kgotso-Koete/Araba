@@ -4,9 +4,10 @@
     <div class="post-content">
       <h3>{{title}}</h3>
       <span>{{question}}</span>
+      <hr> 
+      <p>Submitted by {{author}} on <span class="date">{{submittedText}}</span></p>
       <p>
-        {{pluralize votes "Vote"}},
-        submitted by {{author}}, 
+        {{pluralize votes "Vote"}} |  
         <a href="{{pathFor 'postPage'}}">{{pluralize commentsCount "comment"}}</a>
         {{#if ownPost}}<a href="{{pathFor 'postEdit'}}">Edit</a>{{/if}}
       </p>

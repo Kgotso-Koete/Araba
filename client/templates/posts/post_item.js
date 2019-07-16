@@ -2,10 +2,8 @@ Template.postItem.helpers({
   ownPost: function() {
     return this.userId === Meteor.userId();
   },
-  domain: function() {
-    var a = document.createElement('a');
-    a.href = this.url;
-    return a.hostname;
+  submittedText: function() {
+    return this.submitted.toString();
   },
   upvotedClass: function() {
     var userId = Meteor.userId();
@@ -19,7 +17,7 @@ Template.postItem.helpers({
     return this.shortUrl ? this.shortUrl : this.url;
   }  
 }); 
- 
+  
 Template.postItem.events({
   'click .upvotable': function(e) {
     e.preventDefault();
