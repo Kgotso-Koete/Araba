@@ -13,7 +13,8 @@
     </li>
      
     <ul class="replies {{this._id}}"> 
-        {{#each replies}}
+        <div class="replyBox_{{this._id}} hidden">{{> replySubmit}}</div> 
+        {{#each replies}} 
           {{> replyItem}}
         {{/each}}
     </ul>

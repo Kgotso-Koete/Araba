@@ -16,7 +16,7 @@ Template.commentItem.helpers({
       {return true};
     }
   });    
-     
+      
 Template.commentItem.events({
 
   'click .reply_button':function(event, template){
@@ -54,14 +54,26 @@ Template.commentItem.events({
 
   'click .reply_submit_button':function(){
     var session_show_reply_id = Session.get("show_reply_id");
-    var id_class = "." + this._id;
-    if(this._id === session_show_reply_id) 
-    {
-      var reply_input = '<li><textarea name="reply" type="text" id="reply" placeholder="Please type in your reply" class="form-control" rows="2"></textarea></li>';
-      $(id_class).prepend(reply_input); 
-      $("." + "btn_" + this._id).text("Submit your reply"); 
-      $("." + "btn_" + this._id).addClass("btn-info"); 
-    }  
-  } 
+    var id_class = "." + this._id; 
+    if(this._id) 
+    { 
+      $("." + "btn_" + this._id).text("Hide reply box"); 
+      $(".replyBox_" + this._id).removeClass('hidden'); 
+      $(".btn_" + this._id).addClass('remove_reply_box'); 
+    }   
+  },
+   
+  'click .remove_reply_box':function(){
+    var session_show_reply_id = Session.get("show_reply_id");
+    var id_class = "." + this._id; 
+    if(this._id) 
+    { 
+      $(".btn_" + this._id).text("Respond to comment"); 
+      $(".btn_" + this._id).removeClass("remove_reply_box");
+      $(".replyBox_" + this._id).addClass('hidden');  
+    }   
+  }
+  
+  
 });   
 
