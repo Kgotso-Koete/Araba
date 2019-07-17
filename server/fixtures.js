@@ -59,6 +59,31 @@ if (Posts.find().count() === 0) {
     submitted: new Date(now - 12 * 10000 * 1000),
     body: 'She built software to that matched worker type x to hiring firm tybe b, so the employmenent creation proposition was clear'
   }); 
+
+  // second set of replies
+  Replies.insert({
+    commentId: IDC_comment_2,
+    userId: Master_Flash._id,
+    author: Master_Flash.profile.name,
+    submitted: new Date(now - 5 * 3600 * 1000),
+    body: 'I am a graduate of accelerator ABC and it was quite enriching'
+  });
+
+  Replies.insert({
+    commentId: IDC_comment_2,
+    userId: Kool_Herc._id,
+    author: Kool_Herc.profile.name,
+    submitted: new Date(now - 10 * 5000 * 1000),
+    body: 'I always wonder about weather bootstrapping would be better'
+  }); 
+
+  Replies.insert({
+    commentId: IDC_comment_2,
+    userId: Master_Flash._id,
+    author: Master_Flash.profile.name,
+    submitted: new Date(now - 12 * 10000 * 1000),
+    body: 'You never know untill you try'
+  }); 
   
   for (var i = 0; i < 10; i++) {
     Posts.insert({
