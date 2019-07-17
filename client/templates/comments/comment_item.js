@@ -58,8 +58,16 @@ Template.commentItem.events({
     if(this._id) 
     { 
       $("." + "btn_" + this._id).text("Hide reply box"); 
-      $(".replyBox_" + this._id).removeClass('hidden'); 
       $(".btn_" + this._id).addClass('remove_reply_box'); 
+      
+      if(Meteor.user())
+      {
+        $(".replyBox_" + this._id).removeClass('hidden');
+      }
+      else
+      {
+        $( ".replyError_" + this._id ).removeClass('hidden');
+      }
     }   
   },
    
@@ -71,7 +79,12 @@ Template.commentItem.events({
       $(".btn_" + this._id).text("Respond to comment"); 
       $(".btn_" + this._id).removeClass("remove_reply_box");
       $(".replyBox_" + this._id).addClass('hidden');  
-    }   
+
+      if(!Meteor.user())
+      {
+        $( ".replyError_" + this._id ).addClass('hidden');
+      }
+    }      
   }
   
   

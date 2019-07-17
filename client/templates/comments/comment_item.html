@@ -11,9 +11,10 @@
           </div>
       </p>  
     </li>
-     
-    <ul class="replies {{this._id}}"> 
+      
+    <ul class="replies ul_{{this._id}}"> 
         <div class="replyBox_{{this._id}} hidden">{{> replySubmit}}</div> 
+        <p class='replyError_{{this._id}} hidden'>Please log in to leave a reply</p>
         {{#each replies}} 
           {{> replyItem}}
         {{/each}}
