@@ -18,12 +18,12 @@ Meteor.publish('comments', function(postId) {
 
 Meteor.publish('replies', function(postId) {
   if(postId){
-    check(postId, String);
+    check(postId, String); 
     return Replies.find({commentId: postId},{sort: {submitted: -1}});
   } 
 });    
     
 Meteor.publish('notifications', function() {
   return Notifications.find({userId: this.userId, read: false});
-});  
+});    
   

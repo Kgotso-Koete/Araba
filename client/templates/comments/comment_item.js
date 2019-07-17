@@ -1,3 +1,5 @@
+Session.set('show_reply_id', 'null');  
+
 Deps.autorun(function() {
   return Meteor.subscribe("replies", Session.get("show_reply_id"));
 });
@@ -14,7 +16,7 @@ Template.commentItem.helpers({
       {return true};
     }
   });    
-   
+     
 Template.commentItem.events({
 
   'click .reply_button':function(event, template){
