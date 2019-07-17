@@ -22,7 +22,7 @@ Meteor.publish('replies', function(postId) {
     return Replies.find({commentId: postId},{sort: {submitted: -1}});
   } 
 });    
-   
+    
 Meteor.publish('notifications', function() {
   return Notifications.find({userId: this.userId, read: false});
 });  

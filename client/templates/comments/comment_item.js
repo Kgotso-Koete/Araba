@@ -8,10 +8,15 @@ Template.commentItem.helpers({
     },
     replies: function() {
       return Replies.find({commentId: this._id}); 
+    },
+    showReplySubmit:function() {
+      if(this._id === Session.get("show_reply_id"))
+      {return true};
     }
   });    
    
 Template.commentItem.events({
+
   'click .reply_button':function(event, template){
 
     var session_show_reply_id = Session.get("show_reply_id");
@@ -28,7 +33,7 @@ Template.commentItem.events({
     }
      
   },
- 
+  
   'click .hide_replies':function(event, template){
     
     var session_show_reply_id = Session.get("show_reply_id");
@@ -43,9 +48,18 @@ Template.commentItem.events({
       // change the text
       $(".reply_button").text("Show replies");
     }
+  },
 
-  }
+  'click .reply_submit_button':function(){
+    var session_show_reply_id = Session.get("show_reply_id");
+    var id_class = "." + this._id;
+    if(this._id === session_show_reply_id) 
+    {
+      var reply_input = '<li><textarea name="reply" type="text" id="reply" placeholder="Please type in your reply" class="form-control" rows="2"></textarea></li>';
+      $(id_class).prepend(reply_input); 
+      $("." + "btn_" + this._id).text("Submit your reply"); 
+      $("." + "btn_" + this._id).addClass("btn-info"); 
+    }  
+  } 
 });   
-
-
 

@@ -84,7 +84,7 @@ if (Posts.find().count() === 0) {
     submitted: new Date(now - 12 * 10000 * 1000),
     body: 'You never know untill you try'
   }); 
-  
+   
   for (var i = 0; i < 10; i++) {
     Posts.insert({
       title: 'Test question #' + i,
