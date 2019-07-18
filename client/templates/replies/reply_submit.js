@@ -27,7 +27,7 @@ Template.replySubmit.onCreated(function() {
         errors.body = "Please write a reply";
         return Session.set('replySubmitErrors', errors);
       }
-   
+      
       Meteor.call('replyInsert', reply, function(error, replyId) {
         if (error){
           throwError(error.reason);

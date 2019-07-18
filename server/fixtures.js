@@ -35,7 +35,7 @@ if (Posts.find().count() === 0) {
     submitted: new Date(now - 3 * 3600 * 1000),
     body: 'Have you tried joining any of the local accelerators? Some offer seed funding'
   });
-
+ 
   Replies.insert({
     commentId: IDC_comment_1,
     postId:IDC_Id,
