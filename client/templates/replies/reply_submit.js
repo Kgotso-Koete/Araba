@@ -1,30 +1,30 @@
 Template.replySubmit.onCreated(function() {
-    Session.set('commentSubmitErrors', {});
+    Session.set('replySubmitErrors', {});
   });
   
   Template.replySubmit.helpers({
     errorMessage: function(field) {
-      return Session.get('commentSubmitErrors')[field];
+      return Session.get('replySubmitErrors')[field];
     },
     errorClass: function (field) {
-      return !!Session.get('commentSubmitErrors')[field] ? 'has-error' : '';
+      return !!Session.get('replySubmitErrors')[field] ? 'has-error' : '';
     }
   });
-  
+      
   Template.replySubmit.events({
     'submit form': function(e, template) {
       e.preventDefault();
   
       var $body = $(e.target).find('[name=body]');
-      var comment = {
+      var reply = {
         body: $body.val(),
         postId: template.data._id
-      };
+      }; 
   
       var errors = {};
-      if (! comment.body) {
-        errors.body = "Please write some content";
-        return Session.set('commentSubmitErrors', errors);
+      if (! reply.body) {
+        errors.body = "Please write a reply";
+        return Session.set('replySubmitErrors', errors);
       }
    
       Meteor.call('commentInsert', comment, function(error, commentId) {

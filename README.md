@@ -29,8 +29,9 @@ Opportunities: I am connected to a few startup/SME circles and institutions and 
 Threats: Meteor also does not have as many develope networks and tools as the Mongo DB Express Angular Node (MEAN)stack and might come at the cost more medium-term development flexibility relative to my skillset currently
 
 
-
-The web applicaion is built using the Meteor.js framework and has its foundation based on the microscope app from the Discover Meteor Book: https://github.com/DiscoverMeteor/Microscope
+ 
+#
+This web applicaion is built using the Meteor.js framework and has its foundation based on the microscope app from the Discover Meteor Book: https://github.com/DiscoverMeteor/Microscope
 
 Built by Kgotso Koete
 Johannesburg, July 2019 
