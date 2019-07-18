@@ -1,10 +1,12 @@
-<template name="postItem">
+<template name="postItem"> 
   <div class="post">
     <a href="#" class="upvote btn btn-default {{upvotedClass}}">⬆</a>
     <div class="post-content">
-      <h3>{{title}}</h3>
-      <span>{{question}}</span>
-      <p>Submitted by {{author}} on <span class="date">{{submittedText}}</span></p>
+      <h4><strong>{{title}}</strong></h4>  
+      <br> 
+      <p>{{question}}</p>  
+      <br>  
+      <p class="text-muted">Submitted by <strong class="text-success">{{author}}</strong> on <span class="date">{{submittedText}}</span></p>
       <p>
         {{pluralize votes "Vote"}} |  
         <a href="{{pathFor 'postPage'}}">{{pluralize commentsCount "comment"}}</a>
@@ -12,5 +14,5 @@
       </p>
     </div>
     <a href="{{pathFor 'postPage'}}" class="discuss btn btn-default">Discuss</a>
-  </div>
+  </div> 
 </template> 

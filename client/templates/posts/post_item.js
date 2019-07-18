@@ -3,7 +3,7 @@ Template.postItem.helpers({
     return this.userId === Meteor.userId();
   },
   submittedText: function() {
-    return this.submitted.toString();
+    return this.submitted.toDateString('en-US');  
   },
   upvotedClass: function() {
     var userId = Meteor.userId();

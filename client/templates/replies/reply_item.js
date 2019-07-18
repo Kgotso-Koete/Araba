@@ -1,5 +1,5 @@
 Template.replyItem.helpers({
   submittedText: function() {
-    return this.submitted.toString();
+    return this.submitted.toDateString('en-US'); 
   } 
 }); 

@@ -1,9 +1,9 @@
 <template name="commentItem">
-    <li>
-      <h4>
-        <span class="author">{{author}}</span>
-        <span class="date">on {{submittedText}}</span>
-      </h4>
+    <li> 
+      <p>
+        <span class="author text-success"><strong>{{author}}</strong></span>
+        <span >commented on {{submittedText}}</span>
+      </p> 
       <p>{{body}}
           <div class="text-left">
               <button type="button" class="btn reply_button">Show replies</button> 

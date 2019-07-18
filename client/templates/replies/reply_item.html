@@ -1,10 +1,9 @@
 <template name="replyItem">
     <li>
-        <h4>
-        <span class="author">{{author}}</span>
-        <span class="date">on {{submittedText}}</span>
-        </h4>
-        <p>{{body}} 
+        <p>
+            <span class="author text-success"><strong>{{author}}</strong></span>
+            <span>replied on {{submittedText}}</span>
         </p>
+        <p>{{body}}</p>
     </li>  
 </template>     

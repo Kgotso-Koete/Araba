@@ -1,14 +1,12 @@
-Template.commentItem.onCreated(function() {
-  Session.set('show_reply_id', 'null');  
-});
-  
+Session.set('show_reply_id', 'null'); 
+    
 Deps.autorun(function() {
   return Meteor.subscribe("replies", Session.get("show_reply_id"));
 });
   
 Template.commentItem.helpers({
     submittedText: function() {
-      return this.submitted.toString();
+      return this.submitted.toDateString('en-US');  
     },
     replies: function() {
       return Replies.find({commentId: this._id}); 
