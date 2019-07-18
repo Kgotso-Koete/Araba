@@ -15,7 +15,7 @@ if (Posts.find().count() === 0) {
     author: Master_Flash.profile.name,
     question: 'Has anyone sucessfully raised finance from the IDC for a software company? if so what steps did you follow?',
     submitted: new Date(now - 7 * 3600 * 1000),
-    commentsCount: 2,
+    commentsCount: 8,
     upvoters: [],
     votes: 0
   });   
@@ -38,6 +38,7 @@ if (Posts.find().count() === 0) {
 
   Replies.insert({
     commentId: IDC_comment_1,
+    postId:IDC_Id,
     userId: Master_Flash._id,
     author: Master_Flash.profile.name,
     submitted: new Date(now - 5 * 3600 * 1000),
@@ -46,6 +47,7 @@ if (Posts.find().count() === 0) {
 
   Replies.insert({
     commentId: IDC_comment_1,
+    postId:IDC_Id,
     userId: Kool_Herc._id,
     author: Kool_Herc.profile.name,
     submitted: new Date(now - 10 * 5000 * 1000),
@@ -54,6 +56,7 @@ if (Posts.find().count() === 0) {
 
   Replies.insert({
     commentId: IDC_comment_1,
+    postId:IDC_Id,
     userId: Master_Flash._id,
     author: Master_Flash.profile.name,
     submitted: new Date(now - 12 * 10000 * 1000),
@@ -63,6 +66,7 @@ if (Posts.find().count() === 0) {
   // second set of replies
   Replies.insert({
     commentId: IDC_comment_2,
+    postId:IDC_Id,
     userId: Master_Flash._id,
     author: Master_Flash.profile.name,
     submitted: new Date(now - 5 * 3600 * 1000),
@@ -71,14 +75,16 @@ if (Posts.find().count() === 0) {
 
   Replies.insert({
     commentId: IDC_comment_2,
+    postId:IDC_Id,
     userId: Kool_Herc._id,
     author: Kool_Herc.profile.name,
     submitted: new Date(now - 10 * 5000 * 1000),
     body: 'I always wonder about weather bootstrapping would be better'
   }); 
-
+ 
   Replies.insert({
     commentId: IDC_comment_2,
+    postId:IDC_Id,
     userId: Master_Flash._id,
     author: Master_Flash.profile.name,
     submitted: new Date(now - 12 * 10000 * 1000),
@@ -97,4 +103,4 @@ if (Posts.find().count() === 0) {
       votes: 0
     });
   }
-}
+} 

@@ -10,7 +10,7 @@ Template.replySubmit.onCreated(function() {
       return !!Session.get('replySubmitErrors')[field] ? 'has-error' : '';
     }
   });
-       
+        
   Template.replySubmit.events({
     'submit form': function(e, template) {
       e.preventDefault();
@@ -18,8 +18,9 @@ Template.replySubmit.onCreated(function() {
       var $body = $(e.target).find('[name=body]');
       var reply = {
         body: $body.val(),
-        commentId: template.data._id
-      }; 
+        commentId: template.data._id,
+        postId:Comments.find({_id:template.data._id}).fetch()[0].postId
+      };  
   
       var errors = {};
       if (! reply.body) {
