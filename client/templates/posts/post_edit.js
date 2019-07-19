@@ -24,7 +24,7 @@ Template.postEdit.events({
       title: $(e.target).find('[name=title]').val(),
       question: $(e.target).find('[name=question]').val()
     } 
-    console.log(this._id)
+    console.log("FUCK")
     var errors = validatePost(postProperties);
     if (errors.title || errors.url)
       return Session.set('postEditErrors', errors);

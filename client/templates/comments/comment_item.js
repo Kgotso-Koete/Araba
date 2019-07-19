@@ -16,7 +16,7 @@ Template.commentItem.helpers({
       {return true};
     }
   });    
-      
+        
 Template.commentItem.events({
 
   'click .reply_button':function(event, template){
@@ -53,8 +53,6 @@ Template.commentItem.events({
   },
 
   'click .reply_submit_button':function(){
-    var session_show_reply_id = Session.get("show_reply_id");
-    var id_class = "." + this._id; 
     if(this._id) 
     { 
       $("." + "btn_" + this._id).text("Hide reply box"); 
@@ -70,10 +68,8 @@ Template.commentItem.events({
       }
     }   
   },
-   
+    
   'click .remove_reply_box':function(){
-    var session_show_reply_id = Session.get("show_reply_id");
-    var id_class = "." + this._id; 
     if(this._id) 
     { 
       $(".btn_" + this._id).text("Respond to comment"); 

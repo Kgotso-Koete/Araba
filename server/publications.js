@@ -15,14 +15,14 @@ Meteor.publish('comments', function(postId) {
   check(postId, String);
   return Comments.find({postId: postId}, {sort: {submitted: -1}});
 });
-  
-Meteor.publish('replies', function(postId) {
-  if(postId){
-    check(postId, String); 
-    return Replies.find({commentId: postId},{sort: {submitted: -1}});
+    
+Meteor.publish('replies', function(commentId) {
+  if(commentId){
+    check(commentId, String); 
+    return Replies.find({commentId: commentId},{sort: {submitted: -1}});
   } 
 });    
-    
+     
 Meteor.publish('notifications', function() {
   return Notifications.find({userId: this.userId, read: false});
 });    
