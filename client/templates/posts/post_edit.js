@@ -18,9 +18,9 @@ Template.postEdit.events({
     var currentPostId = this._id;
 
     var postProperties = {
-      url: $(e.target).find('[name=url]').val(),
-      title: $(e.target).find('[name=title]').val()
-    }
+      title: $(e.target).find('[name=title]').val(),
+      question: $(e.target).find('[name=question]').val()
+    } 
 
     var errors = validatePost(postProperties);
     if (errors.title || errors.url)
@@ -35,7 +35,7 @@ Template.postEdit.events({
       }
     }); 
   },
-
+ 
   'click .delete': function(e) {
     e.preventDefault();
 

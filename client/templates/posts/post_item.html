@@ -1,18 +1,20 @@
 <template name="postItem"> 
   <div class="post">
-    <a href="#" class="upvote btn btn-default {{upvotedClass}}">⬆</a>
-    <div class="post-content">
+    <a href="#" class="upvote btn btn-default glyphicon glyphicon-thumbs-up {{upvotedClass}}"></a>
+    <div class="post-content"> 
       <h4><strong>{{title}}</strong></h4>  
       <br> 
       <p>{{question}}</p>  
-      <br>  
+      <br>    
       <p class="text-muted">Submitted by <strong class="text-success">{{author}}</strong> on <span class="date">{{submittedText}}</span></p>
-      <p>
-        {{pluralize votes "Vote"}} |  
-        <a href="{{pathFor 'postPage'}}">{{pluralize commentsCount "comment"}}</a>
-        {{#if ownPost}}<a href="{{pathFor 'postEdit'}}">Edit</a>{{/if}}
+      <p> 
+        <span class="glyphicon glyphicon-ok"></span> 
+        {{pluralize votes "Vote"}}   
+        <span class="glyphicon glyphicon-comment"></span>
+        <a href="{{pathFor 'postPage'}}">{{pluralize commentsCount "comment"}} </a>
+        {{#if ownPost}}<span class="glyphicon glyphicon-pencil"></span><a href="{{pathFor 'postEdit'}}"> Edit</a>{{/if}}
       </p>
     </div>
-    <a href="{{pathFor 'postPage'}}" class="discuss btn btn-default">Discuss</a>
+    <a href="{{pathFor 'postPage'}}" class="discuss btn btn-default">Discuss<span class="glyphicon glyphicon-menu-right"></span></a>
   </div> 
 </template> 

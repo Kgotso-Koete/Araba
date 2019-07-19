@@ -8,7 +8,7 @@ if (Posts.find().count() === 0) {
 
   var master_flash_id = Meteor.users.insert({ profile: { name: 'Grand Master Flash' }});
   var Master_Flash = Meteor.users.findOne(master_flash_id);
- 
+  
   var IDC_Id = Posts.insert({
     title: 'IDC SME funding',
     userId: Master_Flash._id,

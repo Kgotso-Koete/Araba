@@ -3,15 +3,18 @@
       <p>
         <span class="author text-success"><strong>{{author}}</strong></span>
         <span >commented on {{submittedText}}</span>
-      </p> 
+      </p>  
       <p>{{body}}
-          <div class="text-left">
-              <button type="button" class="btn reply_button">Show replies</button> 
-              <button type="button" class="btn reply_submit_button btn_{{this._id}}">Respond to comment</button> 
+          <div class="text-left">   
+            <button type="button" class="btn reply_button">Show replies</button><hr class="hidden">
+            <span class="glyphicon glyphicon-comment"></span>
+            
+            <button type="button" class="btn reply_submit_button btn_{{this._id}}">Respond to comment</button> 
+            <span class="glyphicon glyphicon-menu-down"></span>
           </div>
       </p>  
     </li>
-      
+       
     <ul class="replies ul_{{this._id}}"> 
         <div class="replyBox_{{this._id}} hidden">{{> replySubmit}}</div> 
         <p class='replyError_{{this._id}} hidden'>Please log in to leave a reply</p>

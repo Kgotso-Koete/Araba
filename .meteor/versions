@@ -51,9 +51,12 @@ iron:router@1.1.2
 iron:url@1.1.0
 jquery@1.11.11
 launch-screen@1.1.1
+less@2.5.7
 livedata@1.0.18
 localstorage@1.2.0
 logging@1.1.20
+matb33:bootstrap-base@10.0.0
+matb33:bootstrap-glyphicons@10.0.0
 meteor@1.9.3
 meteor-base@1.4.0
 minifier-css@1.4.2

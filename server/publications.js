@@ -13,9 +13,9 @@ Meteor.publish('singlePost', function(id) {
   
 Meteor.publish('comments', function(postId) {
   check(postId, String);
-  return Comments.find({postId: postId});
+  return Comments.find({postId: postId}, {sort: {submitted: -1}});
 });
- 
+  
 Meteor.publish('replies', function(postId) {
   if(postId){
     check(postId, String); 

@@ -12,23 +12,29 @@
     <div class="collapse navbar-collapse" id="navigation">
       <ul class="nav navbar-nav">
         <li class="{{activeRouteClass 'home' 'newPosts'}}">
-          <a href="{{pathFor 'newPosts'}}">New</a>
+          <a href="{{pathFor 'newPosts'}}"><span class="glyphicon glyphicon-fire"></span> New</a>
         </li>
         <li class="{{activeRouteClass  'bestPosts'}}">
-          <a href="{{pathFor 'bestPosts'}}">Best</a>
-        </li>   
+          <a href="{{pathFor 'bestPosts'}}"><span class="glyphicon glyphicon-star"></span> Best</a>
+        </li>    
         {{#if currentUser}}
           <li class="{{activeRouteClass 'postSubmit'}}">
-            <a href="{{pathFor 'postSubmit'}}">Submit Post</a>
+            <a href="{{pathFor 'postSubmit'}}"><span class="glyphicon glyphicon-plus"></span> Submit Post</a>
           </li>
-          <li class="dropdown">
-            {{> notifications}}
+          <li class="dropdown"> 
+             {{> notifications}}
           </li>
         {{/if}}
       </ul>
+      
       <ul class="nav navbar-nav navbar-right">
+        {{#if currentUser}} 
+          <li> 
+            <a href="#"><span class="glyphicon glyphicon-user"></span></a>
+          </li>
+        {{/if}}
         {{> loginButtons}}
-      </ul>
+      </ul> 
     </div>
   </nav>
 </template>    
