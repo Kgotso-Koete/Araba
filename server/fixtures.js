@@ -5,7 +5,7 @@ if (Posts.find().count() === 0) {
   // create two users
   var kool_herc_id = Meteor.users.insert({ profile: { name: 'DJ Kool Herc' }});
   var Kool_Herc = Meteor.users.findOne(kool_herc_id);
-
+  
   var master_flash_id = Meteor.users.insert({ profile: { name: 'Grand Master Flash' }});
   var Master_Flash = Meteor.users.findOne(master_flash_id);
   
@@ -90,7 +90,7 @@ if (Posts.find().count() === 0) {
     submitted: new Date(now - 12 * 10000 * 1000),
     body: 'You never know untill you try'
   }); 
-   
+    
   for (var i = 0; i < 10; i++) {
     Posts.insert({
       title: 'Test question #' + i,

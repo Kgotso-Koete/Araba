@@ -8,6 +8,9 @@ Template.postEdit.helpers({
   },
   errorClass: function (field) {
     return !!Session.get('postEditErrors')[field] ? 'has-error' : '';
+  },
+  formData:function(){
+    return Posts.findOne({_id: this._id});
   }
 }); 
 
@@ -21,7 +24,7 @@ Template.postEdit.events({
       title: $(e.target).find('[name=title]').val(),
       question: $(e.target).find('[name=question]').val()
     } 
-
+    console.log(this._id)
     var errors = validatePost(postProperties);
     if (errors.title || errors.url)
       return Session.set('postEditErrors', errors);
@@ -38,7 +41,7 @@ Template.postEdit.events({
  
   'click .delete': function(e) {
     e.preventDefault();
-
+     
     if (confirm("Delete this post?")) {
       var currentPostId = this._id;
       Posts.remove(currentPostId);
