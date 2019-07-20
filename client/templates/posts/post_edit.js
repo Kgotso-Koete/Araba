@@ -8,17 +8,14 @@ Template.postEdit.helpers({
   },
   errorClass: function (field) {
     return !!Session.get('postEditErrors')[field] ? 'has-error' : '';
-  },
-  formData:function(){
-    return Posts.findOne({_id: Router.current().params._id});
   }
 }); 
-  
+   
 Template.postEdit.events({
   'submit form': function(e) {
     e.preventDefault();
  
-    var currentPostId = Router.current().params._id;
+    var currentPostId = this._id;
     var postProperties = {
       title: $(e.target).find('[name=title]').val(),
       question: $(e.target).find('[name=question]').val()
@@ -37,12 +34,12 @@ Template.postEdit.events({
       }
     }); 
   },
- 
+  
   'click .delete': function(e) {
     e.preventDefault();
      
     if (confirm("Delete this post?")) {
-      var currentPostId = Router.current().params._id;
+      var currentPostId = this._id;  
       Posts.remove(currentPostId); 
       Router.go('home'); 
     }

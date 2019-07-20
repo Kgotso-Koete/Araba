@@ -16,7 +16,7 @@ Template.commentItem.helpers({
       {return true};
     }
   });    
-        
+         
 Template.commentItem.events({
 
   'click .reply_button':function(event, template){
