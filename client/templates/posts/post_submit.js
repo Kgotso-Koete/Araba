@@ -6,7 +6,7 @@ Template.postSubmit.events({
       question: $(e.target).find('[name=question]').val(),
       title: $(e.target).find('[name=title]').val()
     }; 
-
+  
     var errors = validatePost(post);
     if (errors.title || errors.question)
       return Session.set('postSubmitErrors', errors);

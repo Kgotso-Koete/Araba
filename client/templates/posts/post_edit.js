@@ -10,7 +10,7 @@ Template.postEdit.helpers({
     return !!Session.get('postEditErrors')[field] ? 'has-error' : '';
   }
 }); 
-   
+       
 Template.postEdit.events({
   'submit form': function(e) {
     e.preventDefault();
@@ -22,7 +22,7 @@ Template.postEdit.events({
     } 
 
     var errors = validatePost(postProperties);
-    if (errors.title || errors.url)
+    if (errors.title || errors.question) 
       return Session.set('postEditErrors', errors);
 
     Posts.update(currentPostId, {$set: postProperties}, function(error) {
