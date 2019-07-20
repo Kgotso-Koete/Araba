@@ -10,7 +10,7 @@ Meteor.publish('singlePost', function(id) {
   check(id, String)
   return Posts.find(id);
 });
-  
+   
 Meteor.publish('comments', function(postId) {
   check(postId, String);
   return Comments.find({postId: postId}, {sort: {submitted: -1}});
