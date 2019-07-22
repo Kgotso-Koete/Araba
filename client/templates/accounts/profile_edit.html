@@ -1,0 +1,18 @@
+<template name="profileEdit">
+    <form class="main form page"> 
+        <div class="form-group {{errorClass 'username'}} ">
+        <label class="control-label" for="username">Username</label>
+        <div class="controls">
+            <input name="username" id="username" type="text" value="{{this.username}}" placeholder="Edit your username" class="form-control"/>
+            <span class="help-block text-danger">{{errorMessage 'username'}}</span>
+        </div>
+        </div>    
+
+        <div class="alert alert-success hidden">
+            <strong>Success!</strong> You changed your profile name to {{this.username}}.
+        </div>
+    
+        <span class="glyphicon glyphicon-send"></span>    
+        <input type="submit" value="Save profile changes" class="btn btn-primary submit"/>
+    </form> 
+</template> 
