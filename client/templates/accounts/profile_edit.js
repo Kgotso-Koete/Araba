@@ -1,7 +1,7 @@
 Template.profileEdit.onCreated(function() {
     Session.set('profileEditErrors', {});
   }); 
-  
+   
 Template.profileEdit.helpers({
     errorMessage: function(field) {
       return Session.get('profileEditErrors')[field];

@@ -1,7 +1,9 @@
 # Araba
 
-A Q&A site for African SME/Startup founders to get meaningful business, technical and resourcing advice from each other.Inspired by Quora.com
+Please visit a Heroku instance (optimised for the web, not mobile) of the site at: https://araba-app.herokuapp.com/ 
 
+A Q&A site for African SME/Startup founders to get meaningful business, technical and resourcing advice from each other.Inspired by Quora.com
+ 
 
 # Objective 
 
