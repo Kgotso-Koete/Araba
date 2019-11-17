@@ -32,7 +32,8 @@ Threats: Meteor also does not have as many develope networks and tools as the Mo
 # Timesheet log
 
 - Version 1 (Discover Meteor Tutorial): ?
-- Version 2 (personal modifications): 66 hours
+- Version 2 (personal modifications): 66 hours - build web app deployed on Heroku
+- Version 3(personal modifications): 18 hours - build mobile android app with Cordova deployed to Google Play
 
 #
 
