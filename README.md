@@ -4,7 +4,7 @@ Please visit a Heroku instance (optimised for the web, not mobile) of the site a
 
 A Q&A site for African SME/Startup founders to get meaningful business, technical and resourcing advice from each other.Inspired by Quora.com
 
-## Screen shot of the application
+# Screen shot of the application
 
 ![](/screenshots/Araba_screenshot.png)
 
