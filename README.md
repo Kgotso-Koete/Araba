@@ -2,7 +2,11 @@
 
 Please visit a Heroku instance (optimised for the web, not mobile) of the site at: https://araba-app.herokuapp.com/
 
-A Q&A site for African SME/Startup founders to get meaningful business, technical and resourcing advice from each other.Inspired by Quora.com
+A Q&A site for African SME/Startup founders to get meaningful business, technical and resourcing advice from each other.Inspired by Quora.com.
+
+# Stack
+1. meteor@1.9.3
+2. Meteor packages are listed under [/.meteor/packages](/.meteor/packages)
 
 # Screen shot of the application
 
