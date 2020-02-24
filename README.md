@@ -4,6 +4,10 @@ Please visit a Heroku instance (optimised for the web, not mobile) of the site a
 
 A Q&A site for African SME/Startup founders to get meaningful business, technical and resourcing advice from each other.Inspired by Quora.com
 
+## Screen shot of the application
+
+![](/screenshots/Araba_screenshot.png)
+
 # Objective
 
 To empower founders to build local information networks among their peers/colleagues, and for various entrepreneurship networks in Africa to exchange information on the web. At a later stage, the same model could then be applied to other groups such as high school students who need advice from university students/professionals etc.
